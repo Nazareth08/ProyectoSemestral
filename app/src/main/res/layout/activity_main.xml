@@ -7,26 +7,35 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button_aproximidad"
+        android:id="@+id/button_Gps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Proximidad"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="119dp" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:onClick="Gps"
+        android:text="@string/button_Gps"
+        app:layout_constraintStart_toStartOf="@+id/button_luz"
+        app:layout_constraintTop_toBottomOf="@+id/button_luz" />
 
     <Button
         android:id="@+id/button_luz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Luz"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="288dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        android:onClick="SensorLuz"
+        android:text="@string/button_luz"
+        app:layout_constraintStart_toStartOf="@+id/button_aproximidad"
+        app:layout_constraintTop_toBottomOf="@+id/button_aproximidad" />
 
     <Button
-        android:id="@+id/button_Gps"
+        android:id="@+id/button_aproximidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gps"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="451dp" />
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="88dp"
+        android:onClick="SensorAproximacion"
+        android:text="@string/button_aproximidad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ProyectoSensores</string>
+    <string name="button_luz"> Sensor de luz</string>
+    <string name="button_aproximidad"> Sensor de aproximacion</string>
+    <string name="button_Gps">Gps</string>
+    <string name="tvaproximacion">0</string>
 </resources>
