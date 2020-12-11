@@ -14,9 +14,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //HOLAAAA
 
     }
+
+
+
+
     //pasar del activity principal al activity de sensor luz
     public void SensorLuz (View view){
         Intent i = new Intent(this,SensorLuz.class);
