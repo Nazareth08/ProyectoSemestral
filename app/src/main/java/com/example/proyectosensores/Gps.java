@@ -32,24 +32,24 @@ public class Gps extends AppCompatActivity {
             }
         }
     }
-        public void Buscar(View view){
-            LocationManager locationManager = (LocationManager)Gps.this.getSystemService(Context.LOCATION_SERVICE);
-            LocationListener locationListener = new LocationListener() {
-                @Override
-                public void onLocationChanged(@NonNull Location location) {
-                    tv1.setText(""+ location.getLatitude() + "" + location.getLongitude());
-                }
-                @Override
-                public void onStatusChanged (String s, int i, Bundle bundle) {
-                }
-                @Override
-                public void onProviderEnabled (String s) {
-                }
-                @Override
-                public void onProviderDisabled (String s) {
-                }
-            };
-            int permissionCheck = ContextCompat.checkSelfPermission(Gps.this, Manifest.permission.ACCESS_FINE_LOCATION);
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0, locationListener);
-        }
+    public void Buscar(View view){
+        LocationManager locationManager = (LocationManager)Gps.this.getSystemService(Context.LOCATION_SERVICE);
+        LocationListener locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(@NonNull Location location) {
+                tv1.setText(""+ location.getLatitude() + "" + location.getLongitude());
+            }
+            @Override
+            public void onStatusChanged (String s, int i, Bundle bundle) {
+            }
+            @Override
+            public void onProviderEnabled (String s) {
+            }
+            @Override
+            public void onProviderDisabled (String s) {
+            }
+        };
+        int permissionCheck = ContextCompat.checkSelfPermission(Gps.this, Manifest.permission.ACCESS_FINE_LOCATION);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0, locationListener);
     }
+}
