@@ -7,10 +7,32 @@
     tools:context=".Gps">
 
     <TextView
-        android:id="@+id/txt_ubicacion"
+        android:id="@+id/tvUbicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="310dp" />
+        android:layout_marginBottom="52dp"
+        android:text="Posicion "
+        app:layout_constraintBottom_toTopOf="@+id/button_Gps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_Gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="321dp"
+        android:text="Solicitar Ubicacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginBottom="43dp"
+        android:text="Latitud/Longitud"
+        app:layout_constraintBottom_toTopOf="@+id/tvUbicacion"
+        app:layout_constraintStart_toStartOf="@+id/button_Gps" />
 </androidx.constraintlayout.widget.ConstraintLayout>
