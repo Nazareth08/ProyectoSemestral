@@ -33,7 +33,7 @@ public class Gps extends AppCompatActivity {
                 LocationListener locationListener = new LocationListener() {
                     public void onLocationChanged(Location location) {
                         //cuando cambie de ubicacion mostrar el cambio
-                        tvUbicacion.setText(" "+location.getLatitude()+" "+location.getLongitude());
+                        tvUbicacion.setText(" "+location.getLatitude()+"  /  "+location.getLongitude());
                     }
 
                     public void onStatusChanged(String provider, int Status, Bundle Extras) {
