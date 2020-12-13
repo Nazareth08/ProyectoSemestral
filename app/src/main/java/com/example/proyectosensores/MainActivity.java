@@ -20,13 +20,15 @@ public class MainActivity extends AppCompatActivity {
     public void SensorLuz (View view){
         Intent i = new Intent(this,SensorLuz.class);
         startActivity(i);
-//pasar del activity principal al activity de sensor de aproximacion
+
+    //pasar del activity principal al activity de sensor de aproximacion
     }
     public void SensorAproximacion (View view){
         Intent i = new Intent(this, Sensor_aproximacion.class);
         startActivity(i);
-        //pasar del activity principal al activity de GPs
+
     }
+    //pasar del activity principal al activity de GPs
     public void Gps (View view){
         Intent i = new Intent(this,Gps.class);
         startActivity(i);
