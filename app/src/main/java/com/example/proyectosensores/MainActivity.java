@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,19 +16,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
     //pasar del activity principal al activity de sensor luz
     public void SensorLuz (View view){
         Intent i = new Intent(this,SensorLuz.class);
         startActivity(i);
-
+//pasar del activity principal al activity de sensor de aproximacion
     }
     public void SensorAproximacion (View view){
-        Intent i = new Intent(this,SensorAproximacion.class);
+        Intent i = new Intent(this, Sensor_aproximacion.class);
         startActivity(i);
-
+        //pasar del activity principal al activity de GPs
     }
     public void Gps (View view){
         Intent i = new Intent(this,Gps.class);

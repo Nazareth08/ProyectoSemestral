@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class SensorAproximacion extends AppCompatActivity implements SensorEventListener {
+public class Sensor_aproximacion extends AppCompatActivity implements SensorEventListener {
 
     TextView tv1;
     LinearLayout ln;
@@ -36,7 +36,7 @@ public class SensorAproximacion extends AppCompatActivity implements SensorEvent
         tv1.setText(sensor1);
         float valor = Float.parseFloat(sensor1);
         if (valor== 0){
-           ln.setBackgroundColor(Color.BLUE);
+            ln.setBackgroundColor(Color.BLUE);
         }
         else{
             ln.setBackgroundColor(Color.BLACK);
