@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFCFC"
+    android:backgroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
     <Button
@@ -24,10 +25,11 @@
         app:layout_constraintVertical_bias="0.582" />
 
     <Button
-        android:id="@+id/button_luz"
+        android:id="@+id/button_aceleromtro"
         android:layout_width="190dp"
         android:layout_height="53dp"
         android:backgroundTint="#FD4F4F"
+        android:onClick="Acelerometro"
         android:text="@string/button_acelerometro"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

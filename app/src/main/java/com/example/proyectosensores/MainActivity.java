@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //pasar del activity principal al activity de sensor luz
-    public void SensorLuz (View view){
-        Intent i = new Intent(this,SensorLuz.class);
+    //pasar del activity principal al activity acelerometro
+    public void Acelerometro (View view){
+        Intent i = new Intent(this,Acelerometro.class);
         startActivity(i);
 
     //pasar del activity principal al activity de sensor de aproximacion
