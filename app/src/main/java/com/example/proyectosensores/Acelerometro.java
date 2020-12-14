@@ -48,7 +48,7 @@ public class Acelerometro extends Activity implements SensorEventListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_acelerometro);
         initializeViews();
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -68,13 +68,13 @@ public class Acelerometro extends Activity implements SensorEventListener {
     }
 
     public void initializeViews() {
-        currentX = (TextView) findViewById(R.id.currentX);
-        currentY = (TextView) findViewById(R.id.currentY);
-        currentZ = (TextView) findViewById(R.id.currentZ);
+        currentX = (TextView) findViewById(R.id.CurrentX);
+        currentY = (TextView) findViewById(R.id.CurrentY);
+        currentZ = (TextView) findViewById(R.id.CurrentZ);
 
-        maxX = (TextView) findViewById(R.id.maxX);
-        maxY = (TextView) findViewById(R.id.maxY);
-        maxZ = (TextView) findViewById(R.id.maxZ);
+        maxX = (TextView) findViewById(R.id.MaxX);
+        maxY = (TextView) findViewById(R.id.MaxY);
+        maxZ = (TextView) findViewById(R.id.MaxZ);
     }
 
     //onResume() register the accelerometer for listening the events
