@@ -28,6 +28,7 @@
         android:layout_width="190dp"
         android:layout_height="53dp"
         android:backgroundTint="#FD4F4F"
+        android:onClick="SensorAcelerometro"
         android:text="@string/button_acelerometro"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
