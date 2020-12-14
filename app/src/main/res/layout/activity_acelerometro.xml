@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Maxima Aceleraciión en el eje X:"
+        android:text="Maxima Aceleración en el eje X:"
         android:textSize="15dp" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Max Acceleration: Y-Axis"
+        android:text="Maxima Aceleración en el eje Y:"
         android:textSize="15dp" />
 
     <TextView
@@ -78,7 +78,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="134dp"
         android:background="#ffffff"
         android:gravity="center|top"
         android:orientation="horizontal">

@@ -120,31 +120,31 @@ public class Acelerometro extends Activity implements SensorEventListener {
     }
 
     public void displayCleanValues() {
-        currentX.setText("0.0");
-        currentY.setText("0.0");
-        currentZ.setText("0.0");
+        currentX.setText("0.0 m/s2");
+        currentY.setText("0.0 m/s2");
+        currentZ.setText("0.0 m/s2");
     }
 
     // display the current x,y,z accelerometer values
     public void displayCurrentValues() {
-        currentX.setText(Float.toString(deltaX));
-        currentY.setText(Float.toString(deltaY));
-        currentZ.setText(Float.toString(deltaZ));
+        currentX.setText(Float.toString(deltaX)+"m/s2");
+        currentY.setText(Float.toString(deltaY)+"m/s2");
+        currentZ.setText(Float.toString(deltaZ)+"m/s2");
     }
 
     // display the max x,y,z accelerometer values
     public void displayMaxValues() {
         if (deltaX > deltaXMax) {
             deltaXMax = deltaX;
-            maxX.setText(Float.toString(deltaXMax));
+            maxX.setText(Float.toString(deltaXMax)+"m/s2");
         }
         if (deltaY > deltaYMax) {
             deltaYMax = deltaY;
-            maxY.setText(Float.toString(deltaYMax));
+            maxY.setText(Float.toString(deltaYMax)+"m/s2");
         }
         if (deltaZ > deltaZMax) {
             deltaZMax = deltaZ;
-            maxZ.setText(Float.toString(deltaZMax));
+            maxZ.setText(Float.toString(deltaZMax)+"m/s2");
         }
     }
 }
