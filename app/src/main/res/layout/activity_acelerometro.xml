@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:text="Información sobre tu Acelerómetro"
+        android:text="Información sobre tu Acelerometro"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -186,8 +186,8 @@
         android:id="@+id/imageView3"
         android:layout_width="159dp"
         android:layout_height="126dp"
-
-        app:srcCompat="@drawable/images" />
+        android:src="@drawable/images1"
+        app:srcCompat="@drawable/images1" />
 
 </LinearLayout>
 

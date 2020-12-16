@@ -16,9 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //pasar del activity principal al activity de sensor Acelerometro
-
-    public void SensorAcelerometro (View view){
+    //pasar del activity principal al activity acelerometro
+    public void Acelerometro (View view){
         Intent i = new Intent(this,Acelerometro.class);
         startActivity(i);
 
@@ -34,5 +33,4 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this,Gps.class);
         startActivity(i);
     }
-
 }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFCFC"
+    android:backgroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
     <Button
@@ -17,26 +18,25 @@
         android:textColor="#070707"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintVertical_bias="0.631" />
 
     <Button
-        android:id="@+id/button_luz"
+        android:id="@+id/button_aceleromtro"
         android:layout_width="190dp"
         android:layout_height="53dp"
         android:backgroundTint="#FD4F4F"
-        android:onClick="SensorAcelerometro"
+        android:onClick="Acelerometro"
         android:text="@string/button_acelerometro"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.753" />
 
     <Button
         android:id="@+id/button_aproximidad"
@@ -48,11 +48,10 @@
         android:text="@string/button_aproximidad"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824" />
+        app:layout_constraintVertical_bias="0.882" />
 
     <TextView
         android:id="@+id/textView2"
@@ -80,7 +79,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.512" />
 
     <ImageView
         android:id="@+id/imageView"
