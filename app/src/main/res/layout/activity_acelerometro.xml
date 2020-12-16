@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -14,7 +15,9 @@
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:text="Información sobre tu Acelerometro"
-        android:textSize="24sp" />
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,7 +25,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Maxima Aceleración en el eje X:"
-        android:textSize="15dp" />
+        android:textColor="#00751E"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/MaxX"
@@ -31,6 +36,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="0.0"
+        android:textColor="#121111"
         android:textSize="20dp" />
 
     <TextView
@@ -39,7 +45,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Maxima Aceleración en el eje Y:"
-        android:textSize="15dp" />
+        android:textColor="#074DFF"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/MaxY"
@@ -48,6 +56,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="0.0"
+        android:textColor="#0B0B0B"
         android:textSize="20dp" />
 
     <TextView
@@ -56,7 +65,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Maxima Aceleracion en el eje Z:"
-        android:textSize="15dp" />
+        android:textColor="#FD0202"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/MaxZ"
@@ -65,6 +76,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="0.0"
+        android:textColor="#272626"
         android:textSize="20dp" />
 
     <TextView
@@ -74,11 +86,13 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
         android:text="Aceleracion actual:"
-        android:textSize="20dp" />
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="134dp"
+        android:layout_height="wrap_content"
         android:background="#ffffff"
         android:gravity="center|top"
         android:orientation="horizontal">
@@ -97,6 +111,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="Eje X"
+                android:textColor="#0E0E0E"
                 android:textSize="15dp" />
 
             <TextView
@@ -106,6 +121,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="0.0"
+                android:textColor="#000000"
                 android:textSize="15dp" />
         </LinearLayout>
 
@@ -123,6 +139,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="Eje Y"
+                android:textColor="#0E0E0E"
                 android:textSize="15dp" />
 
             <TextView
@@ -132,6 +149,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="0.0"
+                android:textColor="#050505"
                 android:textSize="15dp" />
         </LinearLayout>
 
@@ -149,6 +167,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="Eje Z"
+                android:textColor="#090808"
                 android:textSize="15dp" />
 
             <TextView
@@ -158,9 +177,17 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="0.0"
+                android:textColor="#000000"
                 android:textSize="15dp" />
         </LinearLayout>
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="224dp"
+        android:layout_height="204dp"
+        android:src="@drawable/images"
+        app:srcCompat="@drawable/images" />
 
 </LinearLayout>
 
