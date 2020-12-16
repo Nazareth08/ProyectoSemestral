@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Maxima Aceleración en el eje X:"
+        android:text="Máxima Aceleración en el eje X:"
         android:textColor="#00751E"
         android:textSize="15dp"
         android:textStyle="bold" />
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Maxima Aceleración en el eje Y:"
+        android:text="Máxima Aceleración en el eje Y:"
         android:textColor="#074DFF"
         android:textSize="15dp"
         android:textStyle="bold" />
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Maxima Aceleracion en el eje Z:"
+        android:text="Máxima Aceleración en el eje Z:"
         android:textColor="#FD0202"
         android:textSize="15dp"
         android:textStyle="bold" />
@@ -85,7 +85,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
-        android:text="Aceleracion actual:"
+        android:text="Aceleración Actual:"
         android:textColor="#000000"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -184,8 +184,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="224dp"
-        android:layout_height="204dp"
+        android:layout_width="159dp"
+        android:layout_height="126dp"
         android:src="@drawable/images"
         app:srcCompat="@drawable/images" />
 
