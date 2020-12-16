@@ -186,8 +186,8 @@
         android:id="@+id/imageView3"
         android:layout_width="159dp"
         android:layout_height="126dp"
-        android:src="@drawable/images"
-        app:srcCompat="@drawable/images" />
+
+        app:srcCompat="@drawable/images1" />
 
 </LinearLayout>
 
