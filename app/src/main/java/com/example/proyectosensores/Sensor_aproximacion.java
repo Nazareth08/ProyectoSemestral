@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class Sensor_aproximacion extends AppCompatActivity implements SensorEventListener {
 
     TextView tv1;
-    LinearLayout ln;
+
     SensorManager sm;
     Sensor sensor;
 
@@ -23,7 +23,6 @@ public class Sensor_aproximacion extends AppCompatActivity implements SensorEven
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sensor_aproximacion);
         tv1=(TextView)findViewById(R.id.tv);
-        ln =(LinearLayout)findViewById(R.id.activityid);
         sm=(SensorManager)getSystemService(SENSOR_SERVICE);
         sensor = sm.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         sm.registerListener(this, sensor,SensorManager.SENSOR_DELAY_NORMAL);
@@ -33,15 +32,8 @@ public class Sensor_aproximacion extends AppCompatActivity implements SensorEven
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         String sensor1 = String.valueOf(sensorEvent.values[0]);
-        tv1.setText(sensor1);
-        float valor = Float.parseFloat(sensor1);
-        if (valor== 0){
-            ln.setBackgroundColor(Color.BLUE);
-        }
-        else{
-            ln.setBackgroundColor(Color.BLACK);
-        }
-    }
+        tv1.setText(sensor1);}
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) { }

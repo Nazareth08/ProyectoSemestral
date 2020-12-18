@@ -184,10 +184,10 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="159dp"
-        android:layout_height="126dp"
-        android:src="@drawable/images1"
-        app:srcCompat="@drawable/images1" />
+        android:layout_width="193dp"
+        android:layout_height="190dp"
+        android:src="@drawable/prox_sensor"
+        app:srcCompat="@drawable/prox_sensor" />
 
 </LinearLayout>
 
