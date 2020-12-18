@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -29,7 +30,9 @@ public class Gps extends AppCompatActivity implements OnMapReadyCallback {
     TextView tvUbicacion;
     private GoogleMap gmap;
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
-
+    private static final int REQUEST_LOCATION = 1;
+    LocationManager locationManager;
+    String latitude, longitude;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,7 @@ public class Gps extends AppCompatActivity implements OnMapReadyCallback {
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
+
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
@@ -49,16 +53,18 @@ public class Gps extends AppCompatActivity implements OnMapReadyCallback {
         btnGPS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LocationManager locationManager = (LocationManager) Gps.this.getSystemService(Context.LOCATION_SERVICE);
+                locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                getLocation();
+            /*
+                LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 LocationListener locationListener = new LocationListener() {
                     public void onLocationChanged(Location location) {
-                        //cuando cambie de ubicacion mostrar el
-                        double longitude= location.getLongitude();
-                        double latitude=location.getLatitude();
+                        longitude= location.getLongitude();
+                        latitude=location.getLatitude();
                         tvUbicacion.setText(" " + latitude + "  /  " + longitude);
                     }
 
-                    public void onStatusChanged(String provider, int Status, Bundle Extras,Location location) {
+                    public void onStatusChanged(String provider, int Status, Bundle Extras) {
 
                     }
 
@@ -69,14 +75,16 @@ public class Gps extends AppCompatActivity implements OnMapReadyCallback {
                     }
 
                 };
-                //solicitar permiso para encontrar la ubicacion (Fine Location)
+
                 int permissionCheck = ContextCompat.checkSelfPermission(Gps.this, Manifest.permission.ACCESS_FINE_LOCATION);
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+
+                Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);*/
             }
         });
 
 
-        //solicitar permiso para encontrar la ubicacion (Fine Location)
+        /*/solicitar permiso para encontrar la ubicacion (Fine Location)
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
         //si no tenemos permiso (procedemos a solicitarlo)
         if (permissionCheck == PackageManager.PERMISSION_DENIED) {
@@ -84,10 +92,28 @@ public class Gps extends AppCompatActivity implements OnMapReadyCallback {
             } else {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             }
-        }
+        }*/
     }
 
-
+    private void getLocation() {
+        if (ActivityCompat.checkSelfPermission(
+                Gps.this,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                Gps.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        } else {
+            Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (locationGPS != null) {
+                double lat = locationGPS.getLatitude();
+                double longi = locationGPS.getLongitude();
+                latitude = String.valueOf(lat);
+                longitude = String.valueOf(longi);
+                tvUbicacion.setText(" " + latitude + "  /  " + longitude);
+                onMapReady(gmap);
+            } else {
+                Toast.makeText(this, "Unable to find location.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
 
 
@@ -113,8 +139,18 @@ public class Gps extends AppCompatActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         gmap = googleMap;
-        gmap.setMinZoomPreference(12);
-        LatLng pa = new LatLng(40.7143528, -74.0059731);
+        gmap.setMinZoomPreference(15);
+        LatLng pa = new LatLng(8.99265,-79.58420);
+        if(latitude==null | longitude==null)
+        {
+           pa = new LatLng(40.7128,-74.0060);
+        }
+        else {
+            pa = new LatLng(Double.parseDouble(latitude),Double.parseDouble(longitude));
+        }
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(pa);
+        gmap.addMarker(markerOptions);
         gmap.moveCamera(CameraUpdateFactory.newLatLng(pa));
         mapView.onResume();
     }
