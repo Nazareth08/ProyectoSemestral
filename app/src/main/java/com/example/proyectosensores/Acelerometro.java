@@ -53,16 +53,14 @@ public class Acelerometro extends Activity implements SensorEventListener {
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
-            // success! we have an accelerometer
-
             accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
             vibrateThreshold = accelerometer.getMaximumRange() / 2;
         } else {
-            // fai! we dont have an accelerometer!
+
         }
 
-        //initialize vibration
+
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
     }
@@ -77,13 +75,13 @@ public class Acelerometro extends Activity implements SensorEventListener {
         maxZ = (TextView) findViewById(R.id.MaxZ);
     }
 
-    //onResume() register the accelerometer for listening the events
+
     protected void onResume() {
         super.onResume();
         sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
-    //onPause() unregister the accelerometer for stop listening the events
+
     protected void onPause() {
         super.onPause();
         sensorManager.unregisterListener(this);
@@ -97,19 +95,19 @@ public class Acelerometro extends Activity implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
 
-        // clean current values
-        displayCleanValues();
-        // display the current x,y,z accelerometer values
-        displayCurrentValues();
-        // display the max x,y,z accelerometer values
-        displayMaxValues();
 
-        // get the change of the x,y,z values of the accelerometer
+        valores_en_cero();
+
+        valores_actuales();
+
+        valores_maximos();
+
+
         deltaX = Math.abs(lastX - event.values[0]);
         deltaY = Math.abs(lastY - event.values[1]);
         deltaZ = Math.abs(lastZ - event.values[2]);
 
-        // if the change is below 2, it is just plain noise
+
         if (deltaX < 2)
             deltaX = 0;
         if (deltaY < 2)
@@ -119,21 +117,20 @@ public class Acelerometro extends Activity implements SensorEventListener {
         }
     }
 
-    public void displayCleanValues() {
+    public void valores_en_cero() {
         currentX.setText("0.0 m/s2");
         currentY.setText("0.0 m/s2");
         currentZ.setText("0.0 m/s2");
     }
 
-    // display the current x,y,z accelerometer values
-    public void displayCurrentValues() {
+
+    public void valores_actuales() {
         currentX.setText(Float.toString(deltaX)+"m/s2");
         currentY.setText(Float.toString(deltaY)+"m/s2");
         currentZ.setText(Float.toString(deltaZ)+"m/s2");
     }
 
-    // display the max x,y,z accelerometer values
-    public void displayMaxValues() {
+    public void valores_maximos() {
         if (deltaX > deltaXMax) {
             deltaXMax = deltaX;
             maxX.setText(Float.toString(deltaXMax)+"m/s2");
