@@ -55,44 +55,8 @@ public class Gps extends AppCompatActivity implements OnMapReadyCallback {
             public void onClick(View view) {
                 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 getLocation();
-            /*
-                LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                LocationListener locationListener = new LocationListener() {
-                    public void onLocationChanged(Location location) {
-                        longitude= location.getLongitude();
-                        latitude=location.getLatitude();
-                        tvUbicacion.setText(" " + latitude + "  /  " + longitude);
-                    }
-
-                    public void onStatusChanged(String provider, int Status, Bundle Extras) {
-
-                    }
-
-                    public void onProviderEnabled(String provider) {
-                    }
-
-                    public void onProviderDisabled(String provider) {
-                    }
-
-                };
-
-                int permissionCheck = ContextCompat.checkSelfPermission(Gps.this, Manifest.permission.ACCESS_FINE_LOCATION);
-
-                Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);*/
             }
         });
-
-
-        /*/solicitar permiso para encontrar la ubicacion (Fine Location)
-        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-        //si no tenemos permiso (procedemos a solicitarlo)
-        if (permissionCheck == PackageManager.PERMISSION_DENIED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
-            } else {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            }
-        }*/
     }
 
     private void getLocation() {
