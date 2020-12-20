@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 // PROBANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+        // PRUEBA 2222222222222222222222222222
     }
 
     //pasar del activity principal al activity acelerometro
