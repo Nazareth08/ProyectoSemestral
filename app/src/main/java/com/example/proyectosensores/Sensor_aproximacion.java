@@ -18,7 +18,7 @@ public class Sensor_aproximacion extends AppCompatActivity implements SensorEven
 
     SensorManager sm;
     Sensor sensor;
-
+//hola soy ana
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
